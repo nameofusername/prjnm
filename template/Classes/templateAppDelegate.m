@@ -2,7 +2,7 @@
 //  templateAppDelegate.m
 //  template
 //
-//  Created by Dmitry A. Shashkin on 9/14/11.
+//  Created by Anton on 9/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 

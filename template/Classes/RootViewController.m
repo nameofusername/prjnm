@@ -2,7 +2,7 @@
 //  RootViewController.m
 //  template
 //
-//  Created by Dmitry A. Shashkin on 9/14/11.
+//  Created by Anton on 9/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -24,7 +24,7 @@
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.title = @"Books";
     books = [[NSMutableArray alloc] init];
 }
@@ -33,6 +33,7 @@
 {
     NewViewController *nvc = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
     nvc.delegate = self;
+    nvc.change = NO;
     [self.navigationController pushViewController:nvc animated:YES];
     [nvc release];
 }
@@ -72,15 +73,28 @@
 -(void)newViewController:(NewViewController *)newViewController didAddBook:(Book *)book
 {
     if (book) {
-        [self addBook:book animated:NO];
+        if(!newViewController.change)
+            [self addBook:book animated:NO];
+        else
+            [self changeBook:book atIndex:1 animated:NO]; // aaaaaa!!!!!!!
     }
     [self dismissModalViewControllerAnimated:YES];
     [self.tableView reloadData];
 }
 
+-(void)newViewController:(NewViewController *)newViewController didChangeBook:(Book *)book
+{
+    
+}
+
 -(void)addBook:(Book *)book animated:(BOOL)animated
 {
     [books addObject:book];
+    
+}
+
+-(void)changeBook:(Book *)book atIndex:(NSInteger)index animated:(BOOL)animated
+{
     
 }
 
@@ -126,20 +140,20 @@
 */
 
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
-        
+        [books removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }   
 }
-*/
+
 
 
 /*
@@ -170,7 +184,12 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
-}
+    NewViewController *nvc = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
+    nvc.delegate = self;
+    nvc.change = YES;
+    [self.navigationController pushViewController:nvc animated:YES];
+    [nvc release];
+   }
 
 
 #pragma mark -

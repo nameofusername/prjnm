@@ -12,16 +12,23 @@
 
 @implementation NewViewController
 
-@synthesize txtTitle, txtAuthor, delegate;
+@synthesize txtTitle, txtAuthor, delegate, change;
 
 -(IBAction) done:(id)sender
 {
+    
     Book *book = [[Book alloc] init];
     book.ttl = txtTitle.text;
     book.athr = txtAuthor.text;
     
-    [self.delegate newViewController:self didAddBook:book];
-    
+    if(!self.change)
+    {
+        [self.delegate newViewController:self didAddBook:book];
+    }
+    else
+    {
+        [self.delegate newViewController:self didChangeBook:book];
+    }
     [self.navigationController popViewControllerAnimated:YES];
     [book release];
 }
@@ -59,15 +66,17 @@
 
 - (void)viewDidLoad
 {
+    if (self.change) {
+        self.title = @"Change";
+    }
+    else
+        self.title = @"New book";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"New book";
 }
 
 - (void)viewDidUnload
 {
-    //self.txtTitle = nil;
-    //self.txtAuthor = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

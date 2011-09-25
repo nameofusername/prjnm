@@ -12,5 +12,12 @@
 
 @synthesize ttl, athr;
 
+-(void)dealloc
+{
+    [ttl release];
+    [athr release];
+    [super dealloc];
+}
+
 @end
 

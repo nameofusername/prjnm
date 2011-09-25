@@ -2,7 +2,7 @@
 //  RootViewController.h
 //  template
 //
-//  Created by Dmitry A. Shashkin on 9/14/11.
+//  Created by Anton on 9/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,11 +13,13 @@
 
 @interface RootViewController : UITableViewController<BookAddDelegate> {
     NSMutableArray *books;
+    
 }
 
 @property(nonatomic, retain) IBOutlet NSMutableArray *books;
 
 -(IBAction)buttonSelected:(id)sender;
 -(void)addBook:(Book *)book animated:(BOOL)animated;
+-(void)changeBook:(Book *)book atIndex:(NSInteger)index animated:(BOOL)animated;
 
 @end
