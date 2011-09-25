@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AB42AA7142DEC9E00B74AAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB42AA6142DEC9E00B74AAC /* UIKit.framework */; };
+		3AB42AA9142DEC9E00B74AAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB42AA8142DEC9E00B74AAC /* Foundation.framework */; };
+		3AB42AAB142DEC9E00B74AAC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB42AAA142DEC9E00B74AAC /* CoreGraphics.framework */; };
+		3AB42AB1142DEC9E00B74AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AB42AAF142DEC9E00B74AAC /* InfoPlist.strings */; };
+		3AB42AB3142DEC9E00B74AAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42AB2142DEC9E00B74AAC /* main.m */; };
+		3AB42AB7142DEC9E00B74AAC /* SimpleSaveAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42AB6142DEC9E00B74AAC /* SimpleSaveAppDelegate.m */; };
+		3AB42ABA142DEC9E00B74AAC /* SimpleSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42AB9142DEC9E00B74AAC /* SimpleSaveViewController.m */; };
+		3AB42ABD142DEC9E00B74AAC /* SimpleSaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB42ABB142DEC9E00B74AAC /* SimpleSaveViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3AB42AA2142DEC9E00B74AAC /* SimpleSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AB42AA6142DEC9E00B74AAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3AB42AA8142DEC9E00B74AAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3AB42AAA142DEC9E00B74AAC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3AB42AAE142DEC9E00B74AAC /* SimpleSave-Info.plist */ = {isa = PBXFileReference; path = "SimpleSave-Info.plist"; sourceTree = "<group>"; };
+		3AB42AB0142DEC9E00B74AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AB42AB2142DEC9E00B74AAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AB42AB4142DEC9E00B74AAC /* SimpleSave-Prefix.pch */ = {isa = PBXFileReference; path = "SimpleSave-Prefix.pch"; sourceTree = "<group>"; };
+		3AB42AB5142DEC9E00B74AAC /* SimpleSaveAppDelegate.h */ = {isa = PBXFileReference; path = SimpleSaveAppDelegate.h; sourceTree = "<group>"; };
+		3AB42AB6142DEC9E00B74AAC /* SimpleSaveAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleSaveAppDelegate.m; sourceTree = "<group>"; };
+		3AB42AB8142DEC9E00B74AAC /* SimpleSaveViewController.h */ = {isa = PBXFileReference; path = SimpleSaveViewController.h; sourceTree = "<group>"; };
+		3AB42AB9142DEC9E00B74AAC /* SimpleSaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleSaveViewController.m; sourceTree = "<group>"; };
+		3AB42ABC142DEC9E00B74AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SimpleSaveViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AB42A9F142DEC9E00B74AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AB42AA7142DEC9E00B74AAC /* UIKit.framework in Frameworks */,
+				3AB42AA9142DEC9E00B74AAC /* Foundation.framework in Frameworks */,
+				3AB42AAB142DEC9E00B74AAC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AB42A97142DEC9E00B74AAC = {
+			isa = PBXGroup;
+			children = (
+				3AB42AAC142DEC9E00B74AAC /* SimpleSave */,
+				3AB42AA5142DEC9E00B74AAC /* Frameworks */,
+				3AB42AA3142DEC9E00B74AAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AB42AA3142DEC9E00B74AAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AB42AA2142DEC9E00B74AAC /* SimpleSave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AB42AA5142DEC9E00B74AAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AB42AA6142DEC9E00B74AAC /* UIKit.framework */,
+				3AB42AA8142DEC9E00B74AAC /* Foundation.framework */,
+				3AB42AAA142DEC9E00B74AAC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AB42AAC142DEC9E00B74AAC /* SimpleSave */ = {
+			isa = PBXGroup;
+			children = (
+				3AB42AB5142DEC9E00B74AAC /* SimpleSaveAppDelegate.h */,
+				3AB42AB6142DEC9E00B74AAC /* SimpleSaveAppDelegate.m */,
+				3AB42AB8142DEC9E00B74AAC /* SimpleSaveViewController.h */,
+				3AB42AB9142DEC9E00B74AAC /* SimpleSaveViewController.m */,
+				3AB42ABB142DEC9E00B74AAC /* SimpleSaveViewController.xib */,
+				3AB42AAD142DEC9E00B74AAC /* Supporting Files */,
+			);
+			path = SimpleSave;
+			sourceTree = "<group>";
+		};
+		3AB42AAD142DEC9E00B74AAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AB42AAE142DEC9E00B74AAC /* SimpleSave-Info.plist */,
+				3AB42AAF142DEC9E00B74AAC /* InfoPlist.strings */,
+				3AB42AB2142DEC9E00B74AAC /* main.m */,
+				3AB42AB4142DEC9E00B74AAC /* SimpleSave-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AB42AA1142DEC9E00B74AAC /* SimpleSave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AB42AC0142DEC9E00B74AAC /* Build configuration list for PBXNativeTarget "SimpleSave" */;
+			buildPhases = (
+				3AB42A9E142DEC9E00B74AAC /* Sources */,
+				3AB42A9F142DEC9E00B74AAC /* Frameworks */,
+				3AB42AA0142DEC9E00B74AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleSave;
+			productName = SimpleSave;
+			productReference = 3AB42AA2142DEC9E00B74AAC /* SimpleSave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AB42A99142DEC9E00B74AAC /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3AB42A9C142DEC9E00B74AAC /* Build configuration list for PBXProject "SimpleSave" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AB42A97142DEC9E00B74AAC;
+			productRefGroup = 3AB42AA3142DEC9E00B74AAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AB42AA1142DEC9E00B74AAC /* SimpleSave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AB42AA0142DEC9E00B74AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AB42AB1142DEC9E00B74AAC /* InfoPlist.strings in Resources */,
+				3AB42ABD142DEC9E00B74AAC /* SimpleSaveViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AB42A9E142DEC9E00B74AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AB42AB3142DEC9E00B74AAC /* main.m in Sources */,
+				3AB42AB7142DEC9E00B74AAC /* SimpleSaveAppDelegate.m in Sources */,
+				3AB42ABA142DEC9E00B74AAC /* SimpleSaveViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3AB42AAF142DEC9E00B74AAC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AB42AB0142DEC9E00B74AAC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3AB42ABB142DEC9E00B74AAC /* SimpleSaveViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AB42ABC142DEC9E00B74AAC /* en */,
+			);
+			name = SimpleSaveViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AB42ABE142DEC9E00B74AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3AB42ABF142DEC9E00B74AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AB42AC1142DEC9E00B74AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleSave/SimpleSave-Prefix.pch";
+				INFOPLIST_FILE = "SimpleSave/SimpleSave-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3AB42AC2142DEC9E00B74AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleSave/SimpleSave-Prefix.pch";
+				INFOPLIST_FILE = "SimpleSave/SimpleSave-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AB42A9C142DEC9E00B74AAC /* Build configuration list for PBXProject "SimpleSave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AB42ABE142DEC9E00B74AAC /* Debug */,
+				3AB42ABF142DEC9E00B74AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AB42AC0142DEC9E00B74AAC /* Build configuration list for PBXNativeTarget "SimpleSave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AB42AC1142DEC9E00B74AAC /* Debug */,
+				3AB42AC2142DEC9E00B74AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AB42A99142DEC9E00B74AAC /* Project object */;
+}
