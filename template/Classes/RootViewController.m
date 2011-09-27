@@ -6,6 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
 #import "Book.h"
 #import "RootViewController.h"
 #import "NewViewController.h"
@@ -21,12 +23,27 @@
 
 
 - (void)viewDidLoad {
+    
+    NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePathDocArray])
+    {
+        books = [[NSMutableArray alloc] init];
+        
+        NSString *filePathBundleArray = [[NSBundle mainBundle] pathForResource:@"array" ofType:@"plist"];
+        [[NSFileManager defaultManager] copyItemAtPath:filePathBundleArray toPath:filePathDocArray error:nil];
+    }
+    else
+    {
+        books = [[NSMutableArray alloc] initWithContentsOfFile:filePathDocArray];
+    }
+
+    
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.title = @"Books";
-    books = [[NSMutableArray alloc] init];
+    
 }
 
 -(IBAction)buttonSelected:(id)sender
@@ -94,6 +111,9 @@
 -(void)addBook:(Book *)book animated:(BOOL)animated
 {
     [books addObject:book];
+    //NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+    //NSString *filePathBundleArray = [[NSBundle mainBundle] pathForResource:@"array" ofType:@"plist"];
+    
     
 }
 
@@ -208,13 +228,19 @@
 }
 
 - (void)viewDidUnload {
-    [books release];
+    
+    NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+    
+    [books writeToFile:filePathDocArray atomically:YES];
+  
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
 
 
 - (void)dealloc {
+    
+    [books release];
     [super dealloc];
 }
 

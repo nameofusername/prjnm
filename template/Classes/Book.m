@@ -12,6 +12,20 @@
 
 @synthesize ttl, athr;
 
+-(void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:ttl forKey:@"title"];
+    [aCoder encodeObject:athr forKey:@"author"];
+}
+
+-(id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    ttl = [[aDecoder decodeObjectForKey:@"title"] retain];
+    athr = [[aDecoder decodeObjectForKey:@"author"] retain];
+    return self;
+}
+
 -(void)dealloc
 {
     [ttl release];

@@ -6,14 +6,16 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RootViewController.h"
-
-@interface Book : NSObject {
+@interface Book : NSObject<NSCoding> {
     NSString *ttl;
     NSString *athr;
 }
 
 @property(nonatomic, retain) NSString *ttl;
 @property(nonatomic, retain) NSString *athr;
+
+-(void) encodeWithCoder:(NSCoder *)aCoder;
+-(id) initWithCoder:(NSCoder *)aDecoder;
+
 
 @end
