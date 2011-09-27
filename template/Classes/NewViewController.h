@@ -13,12 +13,14 @@
 @interface NewViewController : UIViewController<UITextFieldDelegate> {
     
     BOOL change;
+    NSInteger chInd;
     UITextField *txtTitle;
     UITextField *txtAuthor;
     id<BookAddDelegate> delegate;
     
 }
 
+@property(nonatomic, assign) NSInteger chInd;
 @property(nonatomic, assign) BOOL change;
 @property(nonatomic, retain) IBOutlet UITextField *txtTitle;
 @property(nonatomic, retain) IBOutlet UITextField *txtAuthor;
@@ -31,6 +33,6 @@
 @protocol BookAddDelegate <NSObject>
 
 -(void)newViewController:(NewViewController *)newViewController didAddBook:(Book *)book;
--(void)newViewController:(NewViewController *)newViewController didChangeBook:(Book *)book;
+-(void)newViewController:(NewViewController *)newViewController didChangeBook:(Book *)book atIndex:(NSInteger)index;
 
 @end

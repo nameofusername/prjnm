@@ -73,18 +73,22 @@
 -(void)newViewController:(NewViewController *)newViewController didAddBook:(Book *)book
 {
     if (book) {
-        if(!newViewController.change)
-            [self addBook:book animated:NO];
-        else
-            [self changeBook:book atIndex:1 animated:NO]; // aaaaaa!!!!!!!
+        [self addBook:book animated:NO];
     }
     [self dismissModalViewControllerAnimated:YES];
     [self.tableView reloadData];
 }
 
--(void)newViewController:(NewViewController *)newViewController didChangeBook:(Book *)book
+-(void)newViewController:(NewViewController *)newViewController didChangeBook:(Book *)book atIndex:(NSInteger)index
 {
-    
+    if (book) {
+        Book *b;
+        b = [books objectAtIndex:index] ;
+        b.ttl = book.ttl;
+        b.athr = book.athr;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+    [self.tableView reloadData];
 }
 
 -(void)addBook:(Book *)book animated:(BOOL)animated
@@ -187,6 +191,7 @@
     NewViewController *nvc = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
     nvc.delegate = self;
     nvc.change = YES;
+    nvc.chInd = indexPath.row;
     [self.navigationController pushViewController:nvc animated:YES];
     [nvc release];
    }

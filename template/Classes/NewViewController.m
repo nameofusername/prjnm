@@ -12,7 +12,7 @@
 
 @implementation NewViewController
 
-@synthesize txtTitle, txtAuthor, delegate, change;
+@synthesize txtTitle, txtAuthor, delegate, change, chInd;
 
 -(IBAction) done:(id)sender
 {
@@ -27,7 +27,7 @@
     }
     else
     {
-        [self.delegate newViewController:self didChangeBook:book];
+        [self.delegate newViewController:self didChangeBook:book atIndex:self.chInd];
     }
     [self.navigationController popViewControllerAnimated:YES];
     [book release];
