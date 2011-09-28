@@ -12,7 +12,7 @@
 
 @implementation NewViewController
 
-@synthesize txtTitle, txtAuthor, delegate, change, chInd;
+@synthesize txtTitle, txtAuthor, delegate, change, chInd, chTitle, chAuthor;
 
 -(IBAction) done:(id)sender
 {
@@ -32,7 +32,7 @@
     [self.navigationController popViewControllerAnimated:YES];
     [book release];
 }
-
+   
 -(IBAction)makeKyeboardGoAway
 {
     [txtTitle resignFirstResponder];
@@ -68,6 +68,8 @@
 {
     if (self.change) {
         self.title = @"Change";
+        self.txtTitle.text = chTitle;
+        self.txtAuthor.text = chAuthor;
     }
     else
         self.title = @"New book";

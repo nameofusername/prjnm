@@ -249,6 +249,8 @@
     nvc.delegate = self;
     nvc.change = YES;
     nvc.chInd = indexPath.row;
+    nvc.chTitle = [[books objectAtIndex:indexPath.row] ttl];
+    nvc.chAuthor = [[books objectAtIndex:indexPath.row] athr];
     [self.navigationController pushViewController:nvc animated:YES];
     [nvc release];
    }

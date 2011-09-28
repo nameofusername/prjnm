@@ -20,6 +20,8 @@
     
 }
 
+@property(nonatomic, copy) NSString *chTitle;
+@property(nonatomic, copy) NSString *chAuthor;
 @property(nonatomic, assign) NSInteger chInd;
 @property(nonatomic, assign) BOOL change;
 @property(nonatomic, retain) IBOutlet UITextField *txtTitle;
