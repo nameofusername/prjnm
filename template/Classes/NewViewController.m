@@ -79,6 +79,9 @@
 
 - (void)viewDidUnload
 {
+    [chAuthor release];
+    [chTitle release];
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,6 +97,7 @@
 {
     if(delegate)
         [delegate release];
+    
     [super dealloc];
 }
 
