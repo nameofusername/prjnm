@@ -16,7 +16,7 @@
     
 }
 
-@property(nonatomic, retain) IBOutlet NSMutableArray *books;
+@property(nonatomic, retain) NSMutableArray *books;
 
 -(IBAction)buttonSelected:(id)sender;
 -(void)addBook:(Book *)book animated:(BOOL)animated;

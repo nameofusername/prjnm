@@ -140,7 +140,7 @@
     
     [dict writeToFile: filePathDocArray atomically: YES];
     [dict release];
-
+     
 }
 
 
@@ -192,6 +192,22 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
         [books removeObjectAtIndex:indexPath.row];
+        
+        NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity: [books count]];
+        
+        for (NSInteger bookIndex = 0; bookIndex < [books count]; ++bookIndex)
+        {
+            Book *nextBook = [books objectAtIndex: bookIndex];
+            NSDictionary *bookDict = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: nextBook.ttl, nextBook.athr, nil]
+                                                                 forKeys: [NSArray arrayWithObjects: @"title", @"author", nil]];
+            [dict setObject: bookDict forKey: [NSString stringWithFormat: @"book%d", bookIndex]];
+        }
+        
+        [dict writeToFile: filePathDocArray atomically: YES];
+        [dict release];
+
+        
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -250,20 +266,7 @@
 
 - (void)viewDidUnload {
     
-    NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity: [books count]];
-    
-    for (NSInteger bookIndex = 0; bookIndex < [books count]; ++bookIndex)
-    {
-        Book *nextBook = [books objectAtIndex: bookIndex];
-        NSDictionary *bookDict = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: nextBook.ttl, nextBook.athr, nil]
-                                                             forKeys: [NSArray arrayWithObjects: @"title", @"author", nil]];
-        [dict setObject: bookDict forKey: [NSString stringWithFormat: @"book%d", bookIndex]];
-    }
-    
-    [dict writeToFile: filePathDocArray atomically: YES];
-    [dict release];
-  
+      
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
