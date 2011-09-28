@@ -97,6 +97,8 @@
 {
     if(delegate)
         [delegate release];
+    self.chTitle = nil;
+    self.chAuthor = nil;
     
     [super dealloc];
 }

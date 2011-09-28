@@ -170,7 +170,8 @@
     }
     
 	// Configure the cell.
-    cell.textLabel.text = [[books objectAtIndex:indexPath.row] ttl];
+    Book *b = [books objectAtIndex:indexPath.row];
+    cell.textLabel.text = b.ttl;
 
     return cell;
 }
@@ -249,11 +250,12 @@
     nvc.delegate = self;
     nvc.change = YES;
     nvc.chInd = indexPath.row;
-    nvc.chTitle = [[books objectAtIndex:indexPath.row] ttl];
-    nvc.chAuthor = [[books objectAtIndex:indexPath.row] athr];
+    Book *b = [books objectAtIndex:indexPath.row];
+    nvc.chTitle = b.ttl;
+    nvc.chAuthor = b.athr;
     [self.navigationController pushViewController:nvc animated:YES];
     [nvc release];
-   }
+}
 
 
 #pragma mark -
