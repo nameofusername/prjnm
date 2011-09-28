@@ -21,8 +21,11 @@
 -(id) initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
-    ttl = [[aDecoder decodeObjectForKey:@"title"] retain];
-    athr = [[aDecoder decodeObjectForKey:@"author"] retain];
+    if(self != nil)
+    {
+        ttl = [[aDecoder decodeObjectForKey:@"title"] retain];
+        athr = [[aDecoder decodeObjectForKey:@"author"] retain];
+    }
     return self;
 }
 

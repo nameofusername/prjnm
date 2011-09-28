@@ -11,11 +11,7 @@
     NSString *athr;
 }
 
-@property(nonatomic, retain) NSString *ttl;
-@property(nonatomic, retain) NSString *athr;
-
--(void) encodeWithCoder:(NSCoder *)aCoder;
--(id) initWithCoder:(NSCoder *)aDecoder;
-
+@property(nonatomic, copy) NSString *ttl;
+@property(nonatomic, copy) NSString *athr;
 
 @end

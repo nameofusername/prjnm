@@ -20,6 +20,5 @@
 
 -(IBAction)buttonSelected:(id)sender;
 -(void)addBook:(Book *)book animated:(BOOL)animated;
--(void)changeBook:(Book *)book atIndex:(NSInteger)index animated:(BOOL)animated;
 
 @end

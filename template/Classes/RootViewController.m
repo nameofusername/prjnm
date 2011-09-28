@@ -34,7 +34,22 @@
     }
     else
     {
-        books = [[NSMutableArray alloc] initWithContentsOfFile:filePathDocArray];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePathDocArray];
+        if(dict != nil)
+        {
+            books = [[NSMutableArray alloc] init];
+            for(NSInteger bookIndex = 0; bookIndex < [dict count]; ++bookIndex)
+            {
+                NSDictionary *bookDict = [dict objectForKey: [NSString stringWithFormat:@"book%d", bookIndex]];
+                Book *load = [[Book alloc] init];
+                load.ttl = [bookDict objectForKey:@"title"];
+                load.athr = [bookDict objectForKey:@"author"];
+                [books addObject:load];
+                [load release];
+            }
+        }
+        else
+            books = [[NSMutableArray alloc] init];
     }
 
     
@@ -111,15 +126,21 @@
 -(void)addBook:(Book *)book animated:(BOOL)animated
 {
     [books addObject:book];
-    //NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
-    //NSString *filePathBundleArray = [[NSBundle mainBundle] pathForResource:@"array" ofType:@"plist"];
     
+    NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity: [books count]];
     
-}
+    for (NSInteger bookIndex = 0; bookIndex < [books count]; ++bookIndex)
+    {
+        Book *nextBook = [books objectAtIndex: bookIndex];
+        NSDictionary *bookDict = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: nextBook.ttl, nextBook.athr, nil]
+                                                             forKeys: [NSArray arrayWithObjects: @"title", @"author", nil]];
+        [dict setObject: bookDict forKey: [NSString stringWithFormat: @"book%d", bookIndex]];
+    }
+    
+    [dict writeToFile: filePathDocArray atomically: YES];
+    [dict release];
 
--(void)changeBook:(Book *)book atIndex:(NSInteger)index animated:(BOOL)animated
-{
-    
 }
 
 
@@ -230,8 +251,18 @@
 - (void)viewDidUnload {
     
     NSString *filePathDocArray = [DOCUMENTS stringByAppendingPathComponent:@"array.plist"];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity: [books count]];
     
-    [books writeToFile:filePathDocArray atomically:YES];
+    for (NSInteger bookIndex = 0; bookIndex < [books count]; ++bookIndex)
+    {
+        Book *nextBook = [books objectAtIndex: bookIndex];
+        NSDictionary *bookDict = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: nextBook.ttl, nextBook.athr, nil]
+                                                             forKeys: [NSArray arrayWithObjects: @"title", @"author", nil]];
+        [dict setObject: bookDict forKey: [NSString stringWithFormat: @"book%d", bookIndex]];
+    }
+    
+    [dict writeToFile: filePathDocArray atomically: YES];
+    [dict release];
   
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
